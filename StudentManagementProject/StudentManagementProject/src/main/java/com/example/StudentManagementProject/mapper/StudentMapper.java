@@ -23,43 +23,45 @@ public class StudentMapper {
 
         return studentDto;
 //        if (student == null) {
-//            return null; // Handle null Student
+//            return null;
 //        }
 //
 //        return new StudentDto(
 //                student.getId(),
-//                student.getEnrollmentDate(), // Ensure this is in the correct order
+//                student.getEnrollmentDate(),
 //                student.getFirstName(),
 //                student.getLastName(),
 //                student.getDob(),
 //                student.getGender(),
-//                student.getBranch(), // Ensure this is in the correct order
-//                student.getMobileNumber(), // Ensure this is in the correct order
+//                student.getBranch(),
+//                student.getMobileNumber(),
 //                student.getEmail(),
 //                student.getAddress(),
-//                student.getCreatedAt(), // Optional
-//                student.getUpdatedAt()  // Optional
+//                student.getCreatedAt(),
+//                student.getUpdatedAt()
 //        );
     }
 
     public static Student mapToStudent(StudentDto studentDto) {
         if (studentDto == null) {
-            return null; // Handle null StudentDto
+            return null;
         }
 
-        return new Student(
-                studentDto.getId(),
-                studentDto.getFirstName(),
-                studentDto.getLastName(),
-                studentDto.getDob(),
-                studentDto.getGender(),
-                studentDto.getMobileNumber(),
-                studentDto.getEmail(),
-                studentDto.getAddress(),
-                studentDto.getEnrollmentDate(),
-                studentDto.getBranch(),
-                studentDto.getCreatedAt(),
-                studentDto.getUpdatedAt()
-        );
+        Student student = new Student();
+        student.setId(studentDto.getId());
+        student.setFirstName(studentDto.getFirstName());
+        student.setLastName(studentDto.getLastName());
+        student.setDob(studentDto.getDob());
+        student.setGender(studentDto.getGender());
+        student.setMobileNumber(studentDto.getMobileNumber());
+        student.setEmail(studentDto.getEmail());
+        student.setAddress(studentDto.getAddress());
+        student.setEnrollmentDate(studentDto.getEnrollmentDate());
+        student.setBranch(studentDto.getBranch());
+        student.setCreatedAt(studentDto.getCreatedAt());
+        student.setUpdatedAt(studentDto.getUpdatedAt());
+
+        return student;
     }
+
 }

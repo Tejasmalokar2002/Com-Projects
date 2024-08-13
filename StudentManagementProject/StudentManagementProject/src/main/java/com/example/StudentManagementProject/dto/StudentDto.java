@@ -15,17 +15,17 @@ public class StudentDto {
 
 
     private Long id;
-    private LocalDate enrollmentDate; // Updated to LocalDate
+    private LocalDate enrollmentDate;
     private String firstName;
     private String lastName;
-    private LocalDate dob; // Updated to LocalDate
+    private LocalDate dob;
     private String gender;
-    private String branch; // Updated to branch
-    private String mobileNumber; // Updated to String
+    private String branch;
+    private String mobileNumber;
     private String email;
     private String address;
 
-    // Optional: Add createdAt and updatedAt if you need them in the DTO
-    private LocalDateTime createdAt; // Optional
-    private LocalDateTime updatedAt; // Optional
+
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 }

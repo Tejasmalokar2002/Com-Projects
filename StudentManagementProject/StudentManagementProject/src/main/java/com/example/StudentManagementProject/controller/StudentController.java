@@ -1,15 +1,11 @@
 package com.example.StudentManagementProject.controller;
-
-
 import com.example.StudentManagementProject.dto.StudentDto;
-
 import com.example.StudentManagementProject.entity.Student;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 
 @AllArgsConstructor
@@ -20,7 +16,7 @@ public class StudentController {
 
     private com.example.StudentManagementProject.service.StudentService studentService;
 
-    //Building Rest API
+    //Here I Building Rest API
     @PostMapping
     public ResponseEntity<StudentDto> createStudent(@RequestBody Student student) {
         log.info("student: {}", student);
@@ -29,21 +25,21 @@ public class StudentController {
         return new ResponseEntity<>(studentDto, HttpStatus.CREATED);
     }
 
-    //Build Get Student Rest API
+    //Here I Build Get Student Rest API
     @GetMapping("/{id}")
     public ResponseEntity<StudentDto> getStudentById(@PathVariable("id") Long studentId){
         StudentDto studentDto = studentService.getStudentById(studentId);
         return ResponseEntity.ok(studentDto);
     }
 
-    //Build Get ALl Students REST API
+    //Here I Build Get ALl Students REST API
     @GetMapping
     public ResponseEntity<List<StudentDto>> getAllStudents(){
         List<StudentDto> students = studentService.getAllStudent();
         return ResponseEntity.ok(students);
     }
 
-    //Build Update Student REST API
+    //Here I Build Update Student REST API
     @PutMapping("/{id}")
     public ResponseEntity<StudentDto> updateStudent(@PathVariable("id") Long studentId,
                                                     @RequestBody StudentDto updatedStudent){
@@ -52,7 +48,7 @@ public class StudentController {
     }
 
 
-    //Build DELETE Student REST API
+    //Here I Build DELETE Student REST API
     @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteStudent(@PathVariable("id") Long studentId){
         studentService.deleteStudent(studentId);
